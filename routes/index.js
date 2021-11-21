@@ -1,9 +1,12 @@
-var express = require('express');
+const express = require("express");
+const question = require("../models/question");
 var router = express.Router();
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+router.get("/", async function (req, res, next) {
+  console.log("a");
+  console.log(await question.findById(1));
+  res.render("index", { baslik: "asd" });
 });
 
 module.exports = router;
