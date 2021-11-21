@@ -8,6 +8,7 @@ const schema = mongoose.Schema({
   category: Number,
   difficulty: Number,
   key: Number,
+  added_time: Number,
 });
 
 schema.plugin(AutoIncrement, { id: "key_seq", inc_field: "key" });

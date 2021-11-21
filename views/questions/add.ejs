@@ -1,0 +1,79 @@
+<div class="row">
+    <div class="col-lg-12">
+        <div class="card">
+            <div class="card-title">
+                <h4>Soru Ekle</h4>
+            </div>
+            <div class="card-body">
+                <div class="basic-elements">
+                    <form action="/questions/add" method="post">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="form-group">
+                                    <label>Soru</label>
+                                    <textarea name="question" class="form-control" rows="3" placeholder="soru"></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label>Soru Tipi</label>
+                                    <select id="question-type" name="question-type" class="form-control">
+                                        <option value="-1">Seçiniz</option>
+                                        <option value="0">Quiz</option>
+                                        <option value="1">This or That</option>
+                                    </select>
+                                </div>
+
+                                <div id="quiz" class="d-none">
+                                    <div class="form-group">
+                                        <label>1. Cevap</label>
+                                        <input name="answer-1" class="form-control" type="text" class="form-control" placeholder="1. Cevabı Yazınız">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>2. Cevap</label>
+                                        <input name="answer-2" class="form-control" type="text" class="form-control" placeholder="2. Cevabı Yazınız">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>3. Cevap</label>
+                                        <input name="answer-3" class="form-control" type="text" class="form-control" placeholder="3. Cevabı Yazınız">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>4. Cevap</label>
+                                        <input name="answer-4" class="form-control" type="text" class="form-control" placeholder="4. Cevabı Yazınız">
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Doğru Cevap</label>
+                                    <select id="answer" name="answer" class="form-control">
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Kategori</label>
+                                    <select name="category" class="form-control">
+                                        <% categorys = JSON.parse(categorys); %>
+                                        <% for(var i=0; i<categorys.length; i++) {%>
+                                            <option value="<%= categorys[i].id %>"><%= categorys[i].category %></li>
+                                         <% } %>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Zorluk</label>
+                                    <select name="hard" class="form-control">
+                                        <option value=0>Kolay</option>
+                                        <option value=1>Orta</option>
+                                        <option value=2>Zor</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <button class="btn btn-primary" type="submit">Gönder</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

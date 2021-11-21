@@ -4,9 +4,7 @@ var router = express.Router();
 
 /* GET home page. */
 router.get("/", async function (req, res, next) {
-  console.log("a");
-  console.log(await question.findById(1));
-  res.render("index", { baslik: "asd" });
+  res.render("index", { title: "asd" });
 });
 
 module.exports = router;

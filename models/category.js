@@ -2,9 +2,11 @@ const mongoose = require("mongoose");
 const AutoIncrement = require("mongoose-sequence")(mongoose);
 
 const schema = mongoose.Schema({
-  key: Number,
   category: String,
+  icon: String,
+  added_time: Number,
 });
 
-schema.plugin(AutoIncrement, { id: "key_seq", inc_field: "key" });
+schema.plugin(AutoIncrement, { inc_field: "id" });
+
 module.exports = mongoose.model("Category", schema);
